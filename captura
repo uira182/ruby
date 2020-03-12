@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ps aux | grep 'sincronia\.rb' | awk '{print $2}' | xargs sudo kill -9
+
+rm log.log
+touch log.log
+chmod +x log.log
+rm logs/error.log
+rm logs/general.log
+
+exec >> ./log.log
+exec 2>&1
+
+echo "Service sincronzador starting"
+
+ruby -J-d64 -J-Xmx10g -J-Xms4g -J-XX:+CMSClassUnloadingEnabled -J-XX:+UseConcMarkSweepGC sincronia.rb >> log.log &
+
+disown
+
+echo "Bash exiting. Fare thee well."

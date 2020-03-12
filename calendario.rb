@@ -1,6 +1,6 @@
 # CONTROLE DE ATUALIZAÇÃO ATRAVÉS DE DATA, HORA E UMA VALIDAÇÃO DE ATUALIZAVEL DIARIAMENTE OU NÃO.
 
-# RUBY - PROJETO INICIAL
+# RUBY - SCRIPT REALIAZDO PARA AJUDAR A INTERROMPER ATUALIZAÇÃO CONSTANTE DE INFORMAÇÕES DE ITENS NO BANCO DE DADOS.
 
 require "time"
 
@@ -42,6 +42,6 @@ end
 
 # O item de pesquisa deve carregar - ['id de pesquisa', 'data da pesquisa', 'hora inicial da busca', 'hora final de busca', 'atualiza todos os dias?']
 
-serch = [11, "2020-02-17", "15:00:00", "15:55:00", "1"];
+serch = [11, "2020-02-18", "09:00:00", "10:00:00", "1"];
 
 verifica_att(serch[0], dateCurrent, serch[1], serch[2], serch[3], serch[4])
